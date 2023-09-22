@@ -64,8 +64,8 @@ with DAG('bitcoin_processing', start_date=datetime(2023, 1, 1),
             bash_command='echo "{{ ti.xcom_pull(task_ids=\'process_data\') }} {{ ti.xcom_pull(task_ids=\'store_data\') }}. Success"',
         )
 
-        telegram_token = '6171480329:AAH3bcDruic4yZXJ6qn0-il9TGX2vmnRpE4'
-        telegram_chat_id = '315011381'
+        telegram_token = 'TOKEN'
+        telegram_chat_id = 'CHAT_ID'
 
         send_logs = TelegramOperator(
             task_id='send_logs', 
